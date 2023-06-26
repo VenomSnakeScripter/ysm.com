@@ -2,51 +2,62 @@
 <meta charset="utf-8">
   <title>Pregunta</title>
   <body>
-   
-    <style>
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-       
-      }
-      button {
-        
-        padding: 10px 20px;
-        border-radius: 10px;
-        border: none;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: bold;
-        font-size: 16px;
-        color: white;
-        background: linear-gradient(to right, pink, yellow);
-      }
+
+    <div class="container">
       
-      button:hover {
-        cursor: pointer;
-        opacity: 0.8;
-      }
-    </style>
-    <script>
-            var respuestas = []; // Variable para almacenar las respuestas
-    
-            function preguntar() {
-                var respuesta = confirm("Quieres ir a comer un macdonal conmigo un día?");
-    
-                if (respuesta) {
-                    respuestas.push("Sí"); // Almacenar "Sí" en el array de respuestas
-                    alert("SIUUUUUUUUUUUU YAYA DIME CUANDO TE AMOOOOOOOOOOOOOOOOOOOOO");
-                } else {
-                    respuestas.push("No"); // Almacenar "No" en el array de respuestas
-                    alert("puxa bueno te amo mucho mi niña hermosa :(");
+      <div class="contenedorBoton">
+        <button id=boton onclick="preguntar()">Preguntar</button>
+            <style>
+              body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #000000;
+                margin: 0;
+                padding: 0;
+              }
+              button {
+                
+                padding: 10px 20px;
+                border-radius: 10px;
+                border: none;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: bold;
+                font-size: 16px;
+                color: white;
+                background: linear-gradient(to right, pink, yellow);
+              }
+              
+              button:hover {
+                cursor: pointer;
+                opacity: 0.8;
+              }
+            </style>
+            <script>
+                var respuestas = []; // Variable para almacenar las respuestas
+                function preguntar() {
+                    var respuesta = confirm("Quieres ir a comer un macdonal conmigo un día?");
+                    if (respuesta) {
+                        respuestas.push("Sí"); // Almacenar "Sí" en el array de respuestas
+                        alert("SIUUUUUUUUUUUU YAYA DIME CUANDO TE AMOOOOOOOOOOOOOOOOOOOOO");
+                    } else {
+                        respuestas.push("No"); // Almacenar "No" en el array de respuestas
+                        alert("puxa bueno te amo mucho mi niña hermosa :(");
+                    }
+                    var boton = document.getElementById("boton");
                 }
-            }
-    
-            function mostrarRespuestas() {
-                alert("Respuestas:\n" + respuestas.join("\n"));
-            }
-        </script>
-        <button onclick="preguntar()">Preguntar</button>
+                boton.addEventListener("click", function() {
+                      boton.textContent = "Te amo mucho";
+                      setTimeout(function() {
+                        boton.textContent = "Pregunta";
+                      }, 3000); 
+                    });
         
-    </body> 
+                function mostrarRespuestas() {
+                    alert("Respuestas:\n" + respuestas.join("\n"));
+                }
+            </script>
+          </div>
+      </div>
+    </body>
 </html>
